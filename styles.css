@@ -17,6 +17,13 @@ header {
     padding: 1em 0;
 }
 
+footer {
+    background-color: #F5EFE6;
+    color: #1A4D2E;
+    text-align: center;
+    padding: 1em 0;
+}
+
 main {
     flex: 1;
     padding: 5em;
