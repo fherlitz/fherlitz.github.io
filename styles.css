@@ -1,5 +1,5 @@
 body {
-    background-color: #F5EFE6;
+    background-color: white;
     color: #0f307b;
     font-family: Garamond, serif;
     line-height: 1.6;
@@ -12,7 +12,7 @@ body {
 
 header {
     background-color: #0f307b;
-    color: #E8DFCA;
+    color: white;
     text-align: center;
     padding: 1em 0;
 }
