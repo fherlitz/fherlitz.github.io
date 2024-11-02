@@ -1,28 +1,305 @@
-body {
-    background-color: white;
-    color: #0f307b;
-    font-family: Garamond, serif;
-    line-height: 1.6;
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+.dm-sans-header { /* <uniquifier>: Use a unique and descriptive class name */
+  font-family: "DM Sans", serif;
+  font-optical-sizing: auto;
+  font-weight: 700; /* <weight>: Use a value from 100 to 1000 */
+  font-style: normal;
+}
+
+* {
     margin: 0;
     padding: 0;
-    display: flex; 
+}
+
+body {
+    font-family: "DM Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* <weight>: Use a value from 100 to 1000 */
+    font-style: normal;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+p, li {
+    color: rgb(85, 85, 85);
+    font-weight: 400;
+}
+
+li {
+    list-style: none;
+}
+
+/* Transition */
+a, 
+.btn {
+    transition: all 300ms ease;
+}
+
+/* Desktop Nav */
+nav, 
+.nav-links {
+    display: flex;
+}
+
+nav {
+    justify-content: space-around;
+    align-items: center;
+    height: 17vh; /* It takes 17% of the entire page */
+}
+
+.nav-links {
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.5rem;
+}
+
+/* Links */
+a {
+    color: black;
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+a:hover {
+    color: gray;
+    text-decoration: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: rgb(181, 181, 181);
+    text-underline-offset: 1rem;
+}
+
+/* My name */
+.logo {
+    font-size: 2rem;
+}
+
+.logo:hover {
+    cursor: default;
+}
+
+/* Hamburger menu*/
+#hamburger-nav {
+    display: none;
+}
+
+.hamburger-menu {
+    position: relative;
+    display: inline-block;
+}
+
+.hamburger-icon {
+    display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
 }
 
-header {
-    background-color: #0f307b;
+.hamburger-icon span {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+    text-decoration: none;
+    transition: all 0.3 ease-in-out;
+}
+
+.menu-links li {
+    list-style: none; /* remove bullet points */
+}
+
+/* JS function calls this */
+.menu-links.open {
+    max-height: 300px;
+}
+
+/* JS function moves the toggle symbol */
+.hamburger-icon.open span:first-child {
+    transform: rotate(45deg) translate(10px, 5px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-icon.open span:last-child {
+    transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.hamburger-icon span:first-child {
+    transform: none;
+}
+
+.hamburger-icon span:first-child {
+    opacity: 1;
+}
+
+.hamburger-icon span:first-child {
+    transform: none;
+}
+
+/* Sections */
+section {
+    padding-top: 4vh;
+    height: 96vh;
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+
+.section-container {
+    display: flex;
+}
+
+/* Profile section */
+#profile {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    height: 80vh;
+}
+
+.section__pic-container {
+    display: flex;
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
+}
+
+.section__text {
+    align-self: center;
+    text-align: center;
+}
+
+.section__text p {
+    font-weight: 600;
+}
+
+.section__text__p1 {
+    text-align: center;
+}
+
+.section__text__p2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 3rem;
+    text-align: center;
+}
+
+#socials-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 1rem;
+}
+
+/* Icons */
+.icon {
+    cursor: pointer;
+    height: 2rem;
+  }
+
+/* Contact button */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    font-weight: 700;
+    transition: all 300ms ease;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+}
+
+.btn-color-1 {
+    border: white 0.1rem solid;
+    background: rgb(53, 53, 53);
     color: white;
-    text-align: center;
-    padding: 1em 0;
 }
 
-main {
+.btn-color-1:hover {
+    cursor: pointer;
+    background: rgb(255, 255, 255);
+    color: rgb(53, 53, 53);
+}
+
+.btn-container {
+    gap: 1rem;
+}
+
+/* About section */
+#about {
+    position: relative;
+}
+
+.about-containers {
+    gap: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.about-details-container {
+    justify-content: center;
+    flex-direction: column;
+    padding: 6rem;
+}
+
+.about-containers, .about-details-container {
+    display: flex;
+}
+
+.about-pic {
+    border-radius: 2rem;
+}
+
+.arrow {
+    position: absolute;
+    right: -5rem;
+    bottom: 2.5rem;
+}
+
+.details-container {
+    padding: 1.5rem;
     flex: 1;
-    padding: 5em;
     text-align: center;
 }
 
-footer p {
-    margin: 0;
+.section-container {
+    gap: 4rem;
+    height: 80%;
+}
+
+.section__pic-container {
+    height: 400px;
+    width: 400px;
+    margin: auto 0;
 }

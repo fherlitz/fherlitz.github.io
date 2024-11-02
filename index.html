@@ -3,25 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabian Herlitz</title>
+    <title>Fabian Herlitz • Computer Science Student</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="manifest" href="favicon/site.webmanifest">
-    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link rel="stylesheet" href="media.queries.css"> 
 </head>
 <body>
-    <header>
-        <h1>About me.</h1>
-    </header>
-    <main>
-        <p><strong>Fabians life is currently under construction...</strong></p> <br>
+    <nav id="desktop-nav">
+        <div class="logo">Fabian Herlitz</div>
+        <div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Fabian Herlitz</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+            </div>
+        </div>
+    </nav>
+    <section id="profile">
+        <div class="section__pic-container">
+            <img src="./assets/profile-pic.png" alt="Fabian Herlitz profile picture">
+        </div>
+        <div class="section__text">
+            <p class="section__text__p1">Hi, I'm</p>
+            <h1 class="title">Fabian Herlitz</h1>
+            <p class="section__text__p2">Computer Science Student</p>
+            <div class="bt-container">
+                <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <p class="section__text__p1">Get To Know More</p>
+        <h1 class="title">About Me</h1>
+        <div class="section-container">
+            <div class="section__pic-container">
+                <img src="./assets/about-pic.jpg" alt="Profile picture" class="about-pic">
+            </div>
+            <div class="about-details-container">
+                <div class="about-containers">
+                    <div class="details-container">
+                        <img src="./assets/education.png" alt="Education icon" class="icon">
+                        <h3>Education</h3>
+                        <p>Bachelor of Computer Science (2022 - Present)</p> 
+                        <ul>
+                            <li>Currently in my fifth semester at Freie Universität Berlin</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-container">
+                    <p>Computer science student with a talent for quantitative sciences
+                        and experience living in three countries. Solid foundation in
+                        programming, algorithms and software development. In the
+                        search for an internship where I can apply my skills and gain
+                        practical experience in the field of computer science!</p>
+                        <br>
+                    <p>Some of my interests are Running - Enthusiastic Member
+                        of Adidas runners Berlin, I enjoy
+                        runs to stay active and clear my
+                        mind,
+                        Language Learning - Passionate
+                        about learning new
+                        programming languages,
+                        Art - Casual artist, finding joy and
+                        relaxation in drawing</p>
+                </div>
+            </div>
+        </div>
+        <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#skills'">
+    </section>
+    <section id="skills">
+        <p class="section__text__p1">Explore My</p>
+        <h1 class="title">Skills</h1>
+        <div class="skills-details-container">
+            <div class="about-containers">
+                <div class="details-containers">
+                    <h2 class="skills-sub-title">Programming languages</h2>
+                    <div class="article-container">
+                        <article>
+
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact">
+        <p class="section__text__p1">Get In Touch</p>
+        <h1 class="title">Contact Me</h1>
         <p><strong>Impressum</strong></p>
         <p>Fabian Herlitz</p>
         <a style="color:inherit; text-decoration: none;">+49 152 34695993</a>
         <p>Neuchateller Str. 16, 12203 Berlin, Germany</p>
-        <p><a href="mailto:hi@fherlitz.com" style="color: inherit; text-decoration: underline;"><strong>hi@fherlitz.com</strong></a></p>
-    </main>
+        <p><a href="mailto:hi@fherlitz.com" style="color: inherit;"><strong>hi@fherlitz.com</strong></a></p>
+    </section>
+    <script src="script.js"></script>
 </body>
 </html>
