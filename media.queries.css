@@ -20,7 +20,11 @@
         display: flex;
     }
 
-    #experience, .experience-details-container {
+    #about, #skills, #contact {
+        padding-bottom: 20vh;
+    }
+
+    #skills, .skills-details-container {
         margin-top: 2rem;
     }
 
@@ -43,14 +47,20 @@
     .section__pic-container {
         width: 275px;
         height: 275px;
-        margin: 0 auto 2rem;
+        margin: 5vh auto 2rem;
+    }
+    
+    .about-details-container {
+        padding-top: 0rem;
     }
 
     .about-containers {
         margin-top: 0;
+        padding-top: 10vh;
     }
 }
 
+/* For when the display is smaller than 600px */
 @media screen and (max-width: 600px) {
     #contact, footer {
         height: 40vh;
@@ -75,6 +85,11 @@
         flex-wrap: wrap;
     }
 
+    .about-containers, .text-container {
+        width: 250px;
+        align-self: center;
+    }
+
     .contact-info-upper-container {
         gap: 0.5rem;
     }
@@ -87,7 +102,7 @@
         font-size: 1rem;
     }
 
-    .experience-sub-title {
+    .skills-sub-title {
         font-size: 1.25rem;
     }
 
@@ -105,6 +120,7 @@
         width: auto;
         height: 46vw;
         justify-content: center;
+        margin-top: 5vh;
     }
 
     .section__text__p2 {
@@ -117,5 +133,9 @@
 
     .text-container {
         text-align: justify;
+    }
+
+    .about-details-container {
+        padding: 0rem;
     }
 }
