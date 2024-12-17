@@ -277,7 +277,7 @@ section {
     display: flex;
 }
 
-.about-pic {
+.about-pic, .profile-pic {
     border-radius: 50%;
 }
 
