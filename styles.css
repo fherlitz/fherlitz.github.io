@@ -221,6 +221,8 @@ section {
 .icon {
     cursor: pointer;
     height: 2rem;
+    width: 100%;
+    height: auto;
   }
 
 /* Contact button */
@@ -277,6 +279,8 @@ section {
 
 .about-pic, .profile-pic {
     border-radius: 50%;
+    width: 100%; 
+    height: auto;
 }
 
 .arrow {
