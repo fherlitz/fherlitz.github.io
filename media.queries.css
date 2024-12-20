@@ -117,8 +117,8 @@
     }
 
     .section__pic-container {
-        width: auto;
-        height: 46vw;
+        width: 60%;     
+        height: auto; 
         justify-content: center;
         margin-top: 5vh;
     }
@@ -137,5 +137,15 @@
 
     .about-details-container {
         padding: 0rem;
+    }
+
+    .icon {
+        height: 1.5rem;
+        width: 1.5rem;
+    }
+
+    .email-icon {
+        height: 1.875rem;
+        width: 1.875rem;
     }
 }

@@ -1,9 +1,4 @@
-.dm-sans-header { 
-  font-family: "DM Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 * {
     margin: 0;
@@ -221,8 +216,7 @@ section {
 .icon {
     cursor: pointer;
     height: 2rem;
-    width: 100%;
-    height: auto;
+    width: 2rem;
   }
 
 /* Contact button */
@@ -381,6 +375,7 @@ article .icon {
 
 .email-icon {
     height: 2.5rem;
+    width: 2.5rem;
 }
 
 /* Footer section */
