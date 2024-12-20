@@ -148,4 +148,9 @@
         height: 1.875rem;
         width: 1.875rem;
     }
+
+    .about-pic, .profile-pic {
+        width: 100%;	 
+        height: auto;
+    }
 }
