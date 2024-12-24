@@ -58,7 +58,11 @@
     </nav>
     <section id="profile">
         <div class="section__pic-container">
-            <img src="assets/profile.webp" alt="Fabian Herlitz profile picture" class="profile-pic">
+            <picture>
+                <source srcset="assets/profile-800.webp" media="(max-width: 1200px)">
+                <source srcset="assets/profile-original.webp" media="(min-width: 1201px)">
+                <img src="assets/profile-original.webp" alt="Fabian Herlitz profile picture" class="profile-pic">
+              </picture>              
         </div>
         <div class="section__text">
             <p class="section__text__p1">Hi! I'm</p>
@@ -74,7 +78,11 @@
         <h1 class="title">About Me</h1>
         <div class="section-container">
             <div class="section__pic-container">
-                <img src="assets/about.webp" alt="Profile picture" class="about-pic" loading="lazy">
+                <picture>
+                    <source srcset="assets/about-800.webp" media="(max-width: 1200px)">
+                    <source srcset="assets/about-original.webp" media="(min-width: 1201px)">
+                    <img src="assets/about-original.webp" alt="Profile picture" class="about-pic" loading="lazy">
+                  </picture>                  
             </div>
             <div class="about-details-container">
                 <div class="about-containers">
