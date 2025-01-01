@@ -23,6 +23,9 @@ p, li {
 
 li {
     list-style: none;
+    color: rgb(98, 63, 92);
+    color: rgb(55, 71, 93);
+    color: rgb(76, 57, 104);
 }
 
 /* Transition */
