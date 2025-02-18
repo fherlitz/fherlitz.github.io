@@ -20,7 +20,7 @@
         display: flex;
     }
 
-    #about, #skills, #contact {
+    #about, #skills, #projects, #contact {
         padding-bottom: 20vh;
     }
 
