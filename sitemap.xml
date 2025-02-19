@@ -19,6 +19,12 @@
         <priority>0.8</priority>
     </url>
     <url>
+        <loc>https://www.fherlitz.com/#projects</loc>
+        <lastmod>2025-02-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://www.fherlitz.com/#contact</loc>
         <lastmod>2024-12-20</lastmod>
         <changefreq>monthly</changefreq>
