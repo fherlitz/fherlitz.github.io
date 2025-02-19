@@ -34,9 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('show');
-                //observer.unobserve(entry.target); // Stop observing after animation
-            } else {
-                entry.target.classList.remove('show');
+                observer.unobserve(entry.target); // Stop observing after animation
             }
         });
     }, observerOptions);
