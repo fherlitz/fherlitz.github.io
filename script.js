@@ -63,7 +63,7 @@ window.addEventListener('load', () => {
             loadingScreen.style.display = 'none';
             document.body.classList.remove('loading');
         }, 500);
-    }, 1000);
+    }, 1500);
 });
 
 // Show home button when scrolling
@@ -76,5 +76,26 @@ window.addEventListener('scroll', () => {
         homeButton.classList.add('visible');
     } else {
         homeButton.classList.remove('visible');
+    }
+});
+
+// Theme toggle functionality
+const themeToggle = document.getElementById('theme-toggle');
+const root = document.documentElement;
+
+// Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem('theme') || 'light';
+if (currentTheme === 'dark') {
+    root.classList.add('dark-mode');
+}
+
+themeToggle.addEventListener('click', () => {
+    root.classList.toggle('dark-mode');
+    
+    // Save preference
+    if (root.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+    } else {
+        localStorage.setItem('theme', 'light');
     }
 });
