@@ -4,20 +4,26 @@
         height: 83vh;
         margin-bottom: 6rem;
     }
+    .section__text {
+        margin-top: 2vh;
+    }
 
     .about-containers {
         flex-wrap: wrap;
     }
+
+    nav {
+        max-width: 1000px;
+        padding: 0 10%;
+    }
 }
 
-/* For when the display is smaller than 1200px, the desktop nav won't be shown, but the hamburger*/
+/* For when the display is smaller than 1200px */
 @media screen and (max-width: 1200px) {
-    #desktop-nav {
-        display: none;
-    }
-
-    #hamburger-nav {
-        display: flex;
+    nav {
+        max-width: 800px;
+        padding: 0 10%;
+        height: 15vh;
     }
 
     #about, #skills, #projects, #contact {
@@ -30,60 +36,87 @@
 
     #profile, .section-container {
         display: block;
+        height: 100vh;
+        overflow: hidden;
     }
-
-    .arrow {
-        display: none;
+    .section__text {
+        margin-top: -5vh;
     }
 
     section, .section-container {
         height: fit-content;
-    }
-
-    section {
         margin: 0 5%;
     }
 
     .section__pic-container {
         width: 275px;
         height: 275px;
-        margin: 5vh auto 2rem;
+        margin: 0 auto 2rem;
     }
     
-    .about-details-container {
-        padding-top: 0rem;
+    .about-containers, .contact-info-upper-container {
+        margin-top: 0;
     }
 
-    .about-containers {
-        margin-top: 0;
-        padding-top: 10vh;
+    .section__text__p1 {
+        font-size: 0.875rem;
+    }
+
+    .section__text__p2 {
+        font-size: 1.2rem;
     }
 
     .about-pic, .profile-pic {
         width: 100%; 
         height: auto;
     }
+
+    #loading-screen .logo {
+        font-size: 10vh;
+        text-align: center;
+        white-space: pre-line;
+    }
+
+    .profile-button {
+        font-size: 0.8rem;
+    }
+
+    /* Reorder about section: text first, then image */
+    #about .section-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #about .about-details-container {
+        order: 1;
+        width: 100%;
+    }
+
+    #about .section__pic-container {
+        order: 2;
+        width: 100%;
+    }
 }
 
 /* For when the display is smaller than 600px */
 @media screen and (max-width: 600px) {
-    #contact, footer {
-        height: 40vh;
+    nav {
+        max-width: 100%;
+        padding: 0 10%;
+        height: 12vh;
     }
 
     #profile {
-        height: 83vh;
+        height: 100vh;
         margin-bottom: 0;
+    }
+    .section__text {
+        margin-top: 0;
     }
 
     article {
         font-size: 1rem;
-    }
-
-    /* tackles the nav inside of the footer */
-    footer nav {
-        height: fit-content;
-        margin-bottom: 2rem;
     }
 
     .about-containers, .contact-info-upper-container, .btn.container {
@@ -112,7 +145,7 @@
     }
 
     .logo {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
 
     .nav-links {
@@ -128,10 +161,6 @@
         margin-top: 5vh;
     }
 
-    .section__text__p2 {
-        font-size: 1.25rem;
-    }
-
     .title {
         font-size: 2rem;
     }
@@ -144,18 +173,33 @@
         padding: 0rem;
     }
 
-    .icon {
-        height: 1.5rem;
-        width: 1.5rem;
-    }
-
-    .email-icon {
-        height: 1.875rem;
-        width: 1.875rem;
-    }
-
     .about-pic, .profile-pic {
         width: 100%;	 
         height: auto;
+    }
+
+    #loading-screen .logo {
+        font-size: 8vh;
+        text-align: center;
+        white-space: pre-line;
+    }
+
+    .home-button {
+        display: none;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem 1rem;
+        box-sizing: border-box;
+    }
+
+    .projects-box {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0 0 1.5rem 0;
+        box-sizing: border-box;
     }
 }

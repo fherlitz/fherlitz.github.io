@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" crossorigin="anonymous">
     <link rel="canonical" href="https://www.fherlitz.com">
     <title>Fabian Herlitz • Computer Science Student</title>
     <meta name="description" content="Computer science student with a talent for quantitative sciences and experience living in three countries.">
@@ -90,78 +90,41 @@
     </script>        
 </head>
 <body>
+    <!-- LOADING SCREEN -->
+    <div id="loading-screen">
+        <div class="logo">fabian&#10;herlitz</div>
+    </div>
     <!-- NAVIGATION BAR -->
-    <nav id="desktop-nav" class="animate">
-        <div class="logo">Fabian Herlitz</div>
+    <nav id="desktop-nav">
+        <div class="logo">fabian herlitz</div>
         <div>
             <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#contact">CONTACT</a></li>
             </ul>
         </div>
     </nav>
-    <nav id="hamburger-nav">
-        <div class="logo animate">Fabian Herlitz</div>
-        <div class="hamburger-menu">
-            <div class="hamburger-icon animate" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <div id="overlay" class="overlay">
-                <div class="overlay-content">
-                    <ul class="overlay-links">
-                        <li><a href="#about" onclick="toggleMenu()">About</a></li>
-                        <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
-                        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-                        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
     <!-- START SECTION -->
-    <section id="profile" class="animate">
-        <div class="section__pic-container">
-            <picture>
-                <source srcset="assets/profile-800.webp" media="(max-width: 1200px)">
-                <source srcset="assets/profile-original.webp" media="(min-width: 1201px)">
-                <img src="assets/profile-original.webp" alt="Fabian Herlitz profile picture" class="profile-pic">
-              </picture>              
-        </div>
+    <section id="profile">
         <div class="section__text">
-            <p class="section__text__p1">Hi! I'm</p>
-            <h1 class="title">Fabian Herlitz</h1>
-            <p class="section__text__p2">Computer Science Student</p>
+            <p class="section__text__p3">I'm a curious computer science student exploring<br>what's possible with code, logic, and creativity.</p>
+            <p class="section__text__p3">I enjoy building thoughtful, working solutions<br>while constantly learning and growing through projects.</p>
+            <a href="#about" class="profile-button">WHO IS FABIAN</a>
         </div>
     </section>
     <!-- ABOUT SECTION -->
     <section id="about" class="animate">
-        <p class="section__text__p1">Get To Know More</p>
-        <h1 class="title">About Me</h1>
+        <h1 class="section-title">ME IN A NUT-SHELL</h1>
         <div class="section-container">
             <div class="section__pic-container">
                 <picture>
-                    <source srcset="assets/about-800.webp" media="(max-width: 1200px)">
-                    <source srcset="assets/about-original.webp" media="(min-width: 1201px)">
-                    <img src="assets/about-original.webp" alt="Profile picture" class="about-pic" loading="lazy">
-                  </picture>                  
+                    <source srcset="assets/profile-800.webp" media="(max-width: 1200px)">
+                    <source srcset="assets/profile-original.webp" media="(min-width: 1201px)">
+                    <img src="assets/profile-original.webp" alt="Fabian Herlitz profile picture">
+                </picture>              
             </div>
             <div class="about-details-container">
-                <div class="about-containers">
-                    <div class="details-container">
-                        <img src="assets/education.webp" alt="Education icon" class="icon" loading="lazy">
-                        <h2>Education</h3>
-                        <p>Bachelor of Computer Science (2022 - Present)</p> 
-                        <ul>
-                            <li>Currently in my fifth semester at Freie Universität Berlin</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="text-container">
-                    <p>Computer science student with a talent for quantitative sciences
+                <div class="section__text__p2">
+                    <p>I am a computer science student with a talent for quantitative sciences
                         and experience living in three countries. Skilled in programming,
                         algorithms and software development, bringing a solid foundation
                         in these areas. I am eager to contribute to a dynamic team,
@@ -179,12 +142,10 @@
                 </div>
             </div>
         </div>
-        <img src="assets/arrow.webp" alt="Arrow icon" class="icon arrow" onclick="location.href='./#skills'" loading="lazy">
     </section>
     <!-- SKILLS SECTION -->
     <section id="skills" class="animate">
-        <p class="section__text__p1">Explore My</p>
-        <h1 class="title">Skills</h1>
+        <h1 class="section-title">MY TOOLBOX</h1>
         <div class="skills-details-container">
             <div class="about-containers">
                 <div class="details-container">
@@ -267,47 +228,21 @@
                 </div>
             </div>
         </div>
-        <img src="assets/arrow.webp" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" loading="lazy">
     </section>
     <!-- PROJECTS SECTION -->
     <section id="projects" class="animate">
-        <p class="section__text__p1">Take a look at my</p>
-        <h1 class="title">Projects</h1>
+        <h1 class="section-title">WHAT I'VE BUILT</h1>
         <div class="projects-container">
             <div class="projects-box" data-modal-target="#modal1">
                 <h2>BeLIFE Project</h2>
-                <p>
-                    Contributor to a software development project to improve 
-                    the Future Security Lab's technical infrastructure, focusing 
-                    on system administration, interface development, and optimizing 
-                    the user experience. Implemented a Centralized shutdown of all 
-                    devices with the click of a button as well as a fully functional 
-                    website to manage their events
-                </p>
             </div>
             <div class="projects-box" data-modal-target="#modal2">
                 <h2>Timebreak Recorder</h2>
-                <p>
-                    Currently in the development of a flutter App that monitors 
-                    satellite and accelerometer data in real time to detect 
-                    events based on movement peaks, recording position, precise 
-                    time (GNSS UTC), and impact axis, with manual validation and 
-                    data export for analysis in the field of geophysics
-                </p>
             </div>
             <div class="projects-box" data-modal-target="#modal3">
                 <h2>Green Belt Timeline</h2>
-                <p>
-                    The Green Belt in England is an urban planning strategy to 
-                    limit the uncontrolled expansion of cities and to preserve 
-                    open landscapes around urban areas. Created a website to 
-                    visually see the evolution of this spatial data over the 
-                    years with the help of the Frameworks Vue.js, Leaflet.js, 
-                    Bootstrap as well as QGIS and PostgreSQL
-                </p>
             </div>
         </div>
-        <img src="assets/arrow.webp" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" loading="lazy">
     </section>
 
     <!-- Modals -->
@@ -356,32 +291,15 @@
     
     <!-- CONTACT SECTION -->
     <section id="contact" class="animate">
-        <p class="section__text__p1">Get in Touch</p>
-        <h1 class="title">Contact Me</h1>
-        <div class="contact-info-upper-container">
-            <div class="contact-info-container">
-                <img src="assets/email.webp" alt="email icon" class="icon email-icon" loading="lazy">
-                <p><a href="mailto:hi@fherlitz.com">hi@fherlitz.com</a></p>
-            </div>
-            <div class="contact-info-container">
-                <img src="assets/phone.webp" alt="phone icon" class="icon phone-icon" loading="lazy">
-                <p><a href="tel:+4915234695993">+49 152 34695993</a></p>
-            </div>
+        <div class="contact-container">
+            <h1 class="contact-title">Say Hello</h1>
+            <a href="mailto:hi@fherlitz.com" class="contact-email">hi@fherlitz.com</a>
         </div>
     </section>
     <footer>
-        <nav>
-            <div class="nav-links-container">
-                <ul class="nav-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                </ul>
-            </div>
-        </nav>
-        <p>&#169; 2025 Fabian Herlitz</p>
-        <p>Neuchateller Str. 16, 12203 Berlin, Germany</p>
+        <p>&#169; 2025 Fabian Herlitz<br>Neuchateller Str. 16, 12203 Berlin, Germany</p>
     </footer>
+    <a href="#" class="home-button"><span>f</span></a>
     <script src="script.js" defer></script>
 </body>
 </html>
