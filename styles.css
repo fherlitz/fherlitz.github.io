@@ -21,8 +21,8 @@
 }
 
 @keyframes rainbow-hue {
-    0% { --hue: 240; }
-    100% { --hue: 600; }
+    0% { --hue: 0; }
+    100% { --hue: 360; }
 }
 
 * {
@@ -44,8 +44,8 @@ body {
 }
 
 :root.dark-mode body {
-    background: linear-gradient(180deg, hsl(var(--hue), 100%, 20%) 0%, hsl(var(--hue), 100%, 5%) 25%, hsl(var(--hue), 100%, 5%) 75%, hsl(var(--hue), 100%, 25%) 100%);
-    animation: rainbow-hue 30s linear infinite;
+    background: linear-gradient(180deg, hsl(var(--hue), 100%, 20%) 0%, hsl(var(--hue), 100%, 10%) 25%, hsl(var(--hue), 100%, 10%) 75%, hsl(var(--hue), 100%, 25%) 100%);
+    animation: rainbow-hue 50s linear infinite;
 }
 
 html {
@@ -131,7 +131,7 @@ a:hover {
 /*** SECTIONS ***/
 section {
     padding-top: 4vh;
-    padding-bottom: 20vh;
+    padding-bottom: 10vh;
     margin: 0 10rem;
     box-sizing: border-box;
     min-height: fit-content;
@@ -142,6 +142,15 @@ section {
     justify-content: space-between;
     gap: 4rem;
     height: 80%;
+}
+
+.section-title {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 5rem;
+    font-weight: 500;
+    text-align: left;
+    margin-bottom: 2rem;
+    letter-spacing: -0.05em;
 }
 
 /*** PROFILE SECTION ***/
@@ -174,10 +183,12 @@ section {
 }
 
 .section__text__p2 {
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     text-align: left;
     line-height: 1.5;
-    max-width: 500px;
+    font-family: "EB Garamond", serif;
+    font-weight: 700;
+    max-width: 600px;
     margin: 0 auto 1rem auto;
 }
 
@@ -287,133 +298,197 @@ section {
     position: relative;
 }
 
-.skills-sub-title {
-    font-size: 1.5rem;
-    text-align: center;
-    color: var(--text-color);
+.skills-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.skill-category {
+    background: rgba(0, 0, 0, 0.02);
+    border-radius: 8px;
+    padding: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+:root.dark-mode .skill-category {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+}
+
+:root.dark-mode .skill-category:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.category-title {
+    font-family: "Work Sans", sans-serif;
+    font-size: 1.2rem;
     font-weight: 600;
-    margin-bottom: 2rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
-.skills-details-container {
+.skill-items {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    margin-top: 5rem;
+    gap: 1rem;
 }
 
-.article-container {
+.skill-item {
     display: flex;
-    text-align: initial;
-    flex-wrap: wrap;
-    flex-direction: row;
-    gap: 2.5rem;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-article {
-    display: flex;
-    width: 10rem;
-    justify-content: space-around;
-    gap: 0.5rem;
+:root.dark-mode .skill-item {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-article .icon {
-    cursor: default;
+.skill-item:last-child {
+    border-bottom: none;
+}
+
+.skill-name {
+    font-family: "EB Garamond", serif;
+    font-size: 1.2rem;
+    letter-spacing: 0.02em;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.skill-level {
+    font-family: "Work Sans", sans-serif;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: var(--text-color);
+    opacity: 0.6;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 /*** PROJECTS SECTION ***/
 #projects {
     position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
     margin-top: 5rem;
 }
 
-.projects-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 5rem 2rem;
+
+.projects-table {
+    max-width: 1400px;
+    padding: 2rem 0;
 }
-  
-.projects-box {
-    background-color: var(--text-color);
-    padding: 1.5rem 2rem;
-    border-radius: 1.5rem;
-    margin: 1rem;
-    cursor: pointer;
-    transition: all 0.5s ease;
-    border: 1px solid var(--text-color);
-    flex: 1;
-    min-width: 250px;
-    max-width: 350px;
-    text-align: center;
-    display: flex;
+
+.project-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
     align-items: center;
-    justify-content: center;
-    min-height: 80px;
-    color: var(--background-color);
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    gap: 2rem;
 }
-  
-.projects-box:hover {
-    background-color: transparent;
+
+:root.dark-mode .project-row {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.project-row:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+:root.dark-mode .project-row:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.project-name {
+    font-family: "Work Sans", sans-serif;
+    font-size: 1.7rem;
+    font-weight: 500;
     color: var(--text-color);
 }
-  
-.projects-box h2 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
+
+.project-year {
     font-family: "Work Sans", sans-serif;
-    font-weight: 500;
-    font-size: 1.1rem;
-    margin: 0;
+    font-size: 1.3rem;
+    color: var(--text-color);
+    opacity: 0.7;
 }
-  
-.modal {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 999; 
-    background-color: rgba(0,0,0,0.2); 
-    justify-content: center; 
-    align-items: center; 
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+
+.project-details {
+    display: none;
+    padding: 1.5rem 0 2rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    animation: fadeIn 0.3s ease;
 }
-  
-.modal-content {
-    background-color: var(--background-color);
-    max-width: 600px;
-    width: 90%;
-    padding: 2rem;
-    border-radius: 0.5rem;
-    position: relative;
+
+:root.dark-mode .project-details {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
-  
-.close {
-    position: absolute;
-    top: 0.5rem;
-    right: 1rem;
+
+.project-details.active {
+    display: block;
+}
+
+.project-details p {
+    font-family: "EB Garamond", serif;
+    font-size: 1.4rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.project-details a {
+    font-family: "EB Garamond", serif;
     font-size: 1.5rem;
-    cursor: pointer;
+    color: var(--text-color);
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+}
+
+.project-details a:hover {
+    opacity: 0.5;
+}
+
+.projects-footer {
+    font-family: "EB Garamond", serif;
+    font-size: 1.4rem;
+    max-width: 700px;
+    text-align: center;
+    padding-top: 2rem;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
   
-.modal.active {
-    opacity: 1;
-    pointer-events: auto;
-}  
 
 /*** CONTACT SECTION ***/
 #contact {
@@ -421,6 +496,7 @@ article .icon {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--text-color);
 }
 
 .contact-container {
@@ -433,6 +509,7 @@ article .icon {
     font-family: 'DM Serif Display', serif;
     margin-bottom: 2rem;
     color: var(--text-color);
+    text-decoration: underline;
 }
 
 .contact-email {
@@ -450,20 +527,11 @@ article .icon {
 footer {
     padding: 2rem;
     text-align: center;
-    color: var(--text-color);
     font-family: 'Work Sans', sans-serif;
-}
-
-footer p {
-    font-size: 1rem;
-    line-height: 1.5;
-}
-
-.footer-text {
-    font-family: "Work Sans", serif;
     font-size: 1rem;
     letter-spacing: 0;
-    color: var(--text-color);
+    line-height: 1.5;
+    opacity: 0.5;
 }
 
 #loading-screen {
@@ -530,16 +598,6 @@ body.loading {
 * {
     scrollbar-width: thin;
     scrollbar-color: rgb(168, 168, 168) var(--background-color);
-}
-
-.section-title {
-    font-family: 'Work Sans', sans-serif;
-    font-size: 5rem;
-    font-weight: 500;
-    text-align: left;
-    margin-bottom: 2rem;
-    text-transform: uppercase;
-    letter-spacing: -0.05em;
 }
 
 .profile-button {

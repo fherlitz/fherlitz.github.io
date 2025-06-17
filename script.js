@@ -19,36 +19,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Grab all boxes that should open a modal
-const infoBoxes = document.querySelectorAll('[data-modal-target]');
+// Project table functionality
+const projectRows = document.querySelectorAll('.project-row');
 
-// Add click listeners to open the correct modal
-infoBoxes.forEach(box => {
-    box.addEventListener('click', () => {
-        const modalId = box.getAttribute('data-modal-target');
-        const modal = document.querySelector(modalId);
-        if (modal) {
-            modal.classList.add('active');
-        }
-    });
-});
-
-// Grab all elements that can close a modal
-const closeButtons = document.querySelectorAll('[data-close]');
-closeButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        const modal = btn.closest('.modal');
-        modal.classList.remove('active');
-    });
-});
-
-// Close modal when clicking the overlay background
-const modals = document.querySelectorAll('.modal');
-modals.forEach(modal => {
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
-        }
+projectRows.forEach(row => {
+    row.addEventListener('click', () => {
+        const projectId = row.getAttribute('data-project');
+        const projectDetails = document.getElementById(projectId);
+        
+        // Close all other project details
+        const allDetails = document.querySelectorAll('.project-details');
+        allDetails.forEach(detail => {
+            if (detail !== projectDetails) {
+                detail.classList.remove('active');
+            }
+        });
+        
+        // Toggle current project details
+        projectDetails.classList.toggle('active');
     });
 });
 
@@ -82,12 +70,6 @@ window.addEventListener('scroll', () => {
 // Theme toggle functionality
 const themeToggle = document.getElementById('theme-toggle');
 const root = document.documentElement;
-
-// Check for saved theme preference or default to light mode
-const currentTheme = localStorage.getItem('theme') || 'light';
-if (currentTheme === 'dark') {
-    root.classList.add('dark-mode');
-}
 
 themeToggle.addEventListener('click', () => {
     root.classList.toggle('dark-mode');
