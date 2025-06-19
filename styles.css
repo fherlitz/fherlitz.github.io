@@ -45,11 +45,11 @@ body {
 
 :root.dark-mode body {
     background: 
-        repeating-linear-gradient(86deg, hsl(calc(var(--hue) + 120), 100%, 15%) 0px, transparent 5px, transparent 10px, hsl(calc(var(--hue) + 120), 100%, 15%) 15px),
-        repeating-linear-gradient(88deg, hsl(calc(var(--hue) + 130), 100%, 12%) 2px, transparent 7px, transparent 12px, hsl(calc(var(--hue) + 130), 100%, 12%) 17px),
-        repeating-linear-gradient(90deg, hsl(calc(var(--hue) + 140), 100%, 18%) 4px, transparent 9px, transparent 14px, hsl(calc(var(--hue) + 140), 100%, 18%) 19px),
-        repeating-linear-gradient(92deg, hsl(calc(var(--hue) + 150), 100%, 10%) 6px, transparent 11px, transparent 16px, hsl(calc(var(--hue) + 150), 100%, 10%) 21px),
-        repeating-linear-gradient(94deg, hsl(calc(var(--hue) + 160), 100%, 14%) 8px, transparent 13px, transparent 18px, hsl(calc(var(--hue) + 160), 100%, 14%) 23px),
+        repeating-linear-gradient(86deg, hsl(calc(var(--hue) + 120), 100%, 15%) 0px, transparent 10px, transparent 20px, hsl(calc(var(--hue) + 120), 100%, 15%) 30px),
+        repeating-linear-gradient(88deg, hsl(calc(var(--hue) + 130), 100%, 12%) 4px, transparent 14px, transparent 24px, hsl(calc(var(--hue) + 130), 100%, 12%) 34px),
+        repeating-linear-gradient(90deg, hsl(calc(var(--hue) + 140), 100%, 18%) 8px, transparent 18px, transparent 28px, hsl(calc(var(--hue) + 140), 100%, 18%) 38px),
+        repeating-linear-gradient(92deg, hsl(calc(var(--hue) + 150), 100%, 10%) 12px, transparent 22px, transparent 32px, hsl(calc(var(--hue) + 150), 100%, 10%) 42px),
+        repeating-linear-gradient(94deg, hsl(calc(var(--hue) + 160), 100%, 14%) 16px, transparent 26px, transparent 36px, hsl(calc(var(--hue) + 160), 100%, 14%) 46px),
         linear-gradient(180deg, hsl(var(--hue), 100%, 15%) 0%, hsl(calc(var(--hue) + 60), 100%, 15%) 25%, hsl(calc(var(--hue) + 120), 100%, 15%) 50%, hsl(calc(var(--hue) + 180), 100%, 15%) 75%, hsl(calc(var(--hue) + 240), 100%, 15%) 100%);
     animation: rainbow-hue 30s linear infinite;
 }
@@ -106,7 +106,28 @@ nav {
     font-weight: 500;
     letter-spacing: -0.05em;
     text-decoration: none;
-    transition: color 300ms ease;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--text-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
 }
 
 /* Links */
@@ -117,10 +138,6 @@ a {
     transition: all 300ms ease;
 }
 
-a:hover {
-    opacity: 0.5;
-}
-
 /* My name */
 .logo {
     font-family: "DM Serif Display", serif;
@@ -129,9 +146,34 @@ a:hover {
     color: var(--text-color);
 }
 
-.logo:hover {
+/* Theme toggle (logo-main) */
+.logo-main {
+    font-family: "DM Serif Display", serif;
+    font-size: 2rem;
+    letter-spacing: 0;
+    color: var(--text-color);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.logo-main::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--text-color);
+    transition: width 0.3s ease;
+}
+
+.logo-main:hover {
     cursor: pointer;
-    opacity: 0.5;
+    opacity: 0.7;
+}
+
+.logo-main:hover::after {
+    width: 100%;
 }
 
 /*** SECTIONS ***/
@@ -466,12 +508,28 @@ section {
     font-family: "EB Garamond", serif;
     font-size: 1.5rem;
     color: var(--text-color);
-    text-decoration: underline;
-    transition: opacity 0.3s ease;
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.project-details a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--text-color);
+    transition: width 0.3s ease;
 }
 
 .project-details a:hover {
-    opacity: 0.5;
+    opacity: 0.7;
+}
+
+.project-details a:hover::after {
+    width: 100%;
 }
 
 .projects-footer {
@@ -523,11 +581,28 @@ section {
     color: var(--text-color);
     font-family: 'Work Sans', sans-serif;
     text-decoration: none;
-    transition: color 0.3s ease;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.contact-email::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--text-color);
+    transition: width 0.3s ease;
 }
 
 .contact-email:hover {
-    opacity: 0.5;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.contact-email:hover::after {
+    width: 100%;
 }
 
 footer {
@@ -663,4 +738,3 @@ body.loading {
 .home-button span {
     margin-left: -0.08em;
 }
-
