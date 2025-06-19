@@ -44,8 +44,14 @@ body {
 }
 
 :root.dark-mode body {
-    background: linear-gradient(180deg, hsl(var(--hue), 100%, 20%) 0%, hsl(var(--hue), 100%, 10%) 25%, hsl(var(--hue), 100%, 10%) 75%, hsl(var(--hue), 100%, 25%) 100%);
-    animation: rainbow-hue 50s linear infinite;
+    background: 
+        repeating-linear-gradient(86deg, hsl(calc(var(--hue) + 120), 100%, 15%) 0px, transparent 5px, transparent 10px, hsl(calc(var(--hue) + 120), 100%, 15%) 15px),
+        repeating-linear-gradient(88deg, hsl(calc(var(--hue) + 130), 100%, 12%) 2px, transparent 7px, transparent 12px, hsl(calc(var(--hue) + 130), 100%, 12%) 17px),
+        repeating-linear-gradient(90deg, hsl(calc(var(--hue) + 140), 100%, 18%) 4px, transparent 9px, transparent 14px, hsl(calc(var(--hue) + 140), 100%, 18%) 19px),
+        repeating-linear-gradient(92deg, hsl(calc(var(--hue) + 150), 100%, 10%) 6px, transparent 11px, transparent 16px, hsl(calc(var(--hue) + 150), 100%, 10%) 21px),
+        repeating-linear-gradient(94deg, hsl(calc(var(--hue) + 160), 100%, 14%) 8px, transparent 13px, transparent 18px, hsl(calc(var(--hue) + 160), 100%, 14%) 23px),
+        linear-gradient(180deg, hsl(var(--hue), 100%, 15%) 0%, hsl(calc(var(--hue) + 60), 100%, 15%) 25%, hsl(calc(var(--hue) + 120), 100%, 15%) 50%, hsl(calc(var(--hue) + 180), 100%, 15%) 75%, hsl(calc(var(--hue) + 240), 100%, 15%) 100%);
+    animation: rainbow-hue 30s linear infinite;
 }
 
 html {
@@ -531,7 +537,7 @@ footer {
     font-size: 1rem;
     letter-spacing: 0;
     line-height: 1.5;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 #loading-screen {
