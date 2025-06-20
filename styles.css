@@ -1,5 +1,46 @@
 /*** GENERAL ***/
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+  font-family: 'Work Sans';
+  src: url('fonts/Work_Sans/WorkSans-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 1 999;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Work Sans';
+  src: url('fonts/Work_Sans/WorkSans-Italic-VariableFont_wght.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 1 999;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('fonts/EB_Garamond/EBGaramond-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 100 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'EB Garamond';
+  src: url('fonts/EB_Garamond/EBGaramond-Italic-VariableFont_wght.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 100 800;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DM Serif Display';
+  src: url('fonts/DM_Serif_Display/DMSerifDisplay-Regular.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'DM Serif Display';
+  src: url('fonts/DM_Serif_Display/DMSerifDisplay-Italic.ttf') format('truetype');
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+}
 
 :root {
     --background-color: #f2f2f2;
@@ -387,7 +428,6 @@ section {
     font-weight: 600;
     color: var(--text-color);
     margin-bottom: 1.5rem;
-    text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
@@ -615,6 +655,32 @@ footer {
     opacity: 0.8;
 }
 
+footer a {
+    color: var(--text-color);
+    text-decoration: none;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+footer a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--text-color);
+    transition: width 0.3s ease;
+}
+
+footer a:hover {
+    opacity: 0.7;
+}
+
+footer a:hover::after {
+    width: 100%;
+}
+
 #loading-screen {
     position: fixed;
     top: 0;
@@ -737,4 +803,57 @@ body.loading {
 
 .home-button span {
     margin-left: -0.08em;
+}
+
+/*** LEGAL PAGE ***/
+#legal h2 {
+    font-family: "EB Garamond", serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    position: relative;
+    padding-top: 2.5rem;
+}
+
+#legal h2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--text-color);
+    opacity: 0.5;
+}
+
+.legal-subtitle {
+    font-family: "EB Garamond", serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    position: relative;
+}
+
+.legal-subtitle::before {
+    display: none;
+}
+
+/* Divider line for each legal item */
+#legal .legal-item {
+    position: relative;
+    padding: 2rem 0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: 3rem;
+    align-items: flex-start;
+}
+
+#legal .legal-item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--text-color);
+    opacity: 0.2;
 }

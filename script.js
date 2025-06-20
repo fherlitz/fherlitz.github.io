@@ -43,15 +43,19 @@ projectRows.forEach(row => {
 // Loading screen
 window.addEventListener('load', () => {
     const loadingScreen = document.getElementById('loading-screen');
-    document.body.classList.add('loading');
-    
-    setTimeout(() => {
-        loadingScreen.classList.add('slide-left');
+
+    // Only run the animation if a loading screen exists on this page
+    if (loadingScreen) {
+        document.body.classList.add('loading');
+
         setTimeout(() => {
-            loadingScreen.style.display = 'none';
-            document.body.classList.remove('loading');
-        }, 500);
-    }, 1500);
+            loadingScreen.classList.add('slide-left');
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+                document.body.classList.remove('loading');
+            }, 500);
+        }, 1500);
+    }
 });
 
 // Show home button when scrolling
@@ -71,13 +75,15 @@ window.addEventListener('scroll', () => {
 const themeToggle = document.getElementById('theme-toggle');
 const root = document.documentElement;
 
-themeToggle.addEventListener('click', () => {
-    root.classList.toggle('dark-mode');
-    
-    // Save preference
-    if (root.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.setItem('theme', 'light');
-    }
-});
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        root.classList.toggle('dark-mode');
+        
+        // Save preference
+        if (root.classList.contains('dark-mode')) {
+            localStorage.setItem('theme', 'dark');
+        } else {
+            localStorage.setItem('theme', 'light');
+        }
+    });
+}
