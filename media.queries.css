@@ -199,6 +199,14 @@
         box-sizing: border-box;
     }
 
+    .contact-title {
+        font-size: 6rem;
+    }
+
+    .contact-email {
+        font-size: 1.5rem;
+    }
+
     #legal .legal-item {
         display: block;
         padding: 1.5rem 0;
